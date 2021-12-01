@@ -10,9 +10,7 @@ public class Rannekello {
 		olio2.asetaAika();
 		olio2.naytaAika();
 		Rkello olio3 = new Rkello();
-		olio3.tulostaTiedot();
 		olio3.muutaTiedot("Polar","2.1","L","L");
-		olio3.tulostaTiedot();
 		
 		
 		
@@ -32,10 +30,10 @@ class Rkello{
 	
 	
 	// luokan parametrit*************************************************
-	public String merkki;
-	public String malli;
-	public String koko;
-	public String rannenauhanKoko;
+	private String merkki;
+	private String malli;
+	private String koko;
+	private String rannenauhanKoko;
 	
 	
 	//muodostin *************************************************************
@@ -49,34 +47,35 @@ class Rkello{
 	//luokan metodit ************************************************
 	
 	// toinen kohdan 6 tapa muuttaa tiedot
-	public void muutaTiedot(String merkkiUusi, String malliUusi, String kokoUusi, String rannenauhanKokoUusi) {
+	protected void muutaTiedot(String merkkiUusi, String malliUusi, String kokoUusi, String rannenauhanKokoUusi) {
 		merkki = merkkiUusi;
 		malli = malliUusi;
 		koko = kokoUusi;
 		rannenauhanKoko = rannenauhanKokoUusi;
+		tulostaTiedot();
 	}
 	// kohta 5.
-	public void tulostaTiedot() {
+	private void tulostaTiedot() {
 		System.out.println("Merkki: " + merkki);
 		System.out.println("Malli: " + malli);
 		System.out.println("Koko: " + koko);
 		System.out.println("Rannenauhan koko: " + rannenauhanKoko);
 	}
 	
-	public void naytaAika() {
+	protected void naytaAika() {
 		System.out.println("Kello on: " + aika);
 	}
 	
-	public void naytaPvm() {
+	protected void naytaPvm() {
 		System.out.println(pvm);
 	}
 	
-	public void asetaAika() {
+	protected void asetaAika() {
 		System.out.println("Aseta aika:");
 		aika = in.nextLine();
 	}
 	
-	public void asetaPvm(String pvm) {
+	protected void asetaPvm(String pvm) {
 		
 		this.pvm = pvm;
 	}
